@@ -26,7 +26,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('server-sonar') {
                     bat '''
                         sonar-scanner ^
                         -Dsonar.projectKey=ci-cd-demo ^
