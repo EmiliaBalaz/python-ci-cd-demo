@@ -31,9 +31,16 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'sonar-scanner -Dsonar.projectKey=ci-cd-demo -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_6b4ad65d3889bc60be6b71a8995ba90f0f5e7dd0
-'
+                    bat '''
+                        sonar-scanner ^
+                        -Dsonar.projectKey=ci-cd-demo ^
+                        -Dsonar.sources=. ^
+                        -Dsonar.host.url=http://localhost:9000 ^
+                        -Dsonar.login=sqp_6b4ad65d3889bc60be6b71a8995ba90f0f5e7dd0
+                    '''
                 }
             }
+        }
     }
+
 }
