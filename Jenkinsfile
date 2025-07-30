@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        sonarQubeScanner 'qube'  
-    }
-
     environment {
         SONARQUBE_ENV = credentials('general-token') 
     }
