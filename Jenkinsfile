@@ -20,7 +20,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                bat 'pytest > result.log || exit 0'
+                bat 'pytest > result.log'
             }
         }
 
